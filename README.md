@@ -58,7 +58,7 @@ CH4DashBoard/
 │   │   ├── 📄 Ari.jpg          # Foto profil Ari  
 │   │   ├── 📄 Zidan.jpg        # Foto profil Zidan  
 │   │   ├── 📄 amel.jpg         # Foto profil Amel  
-|   |   └── 📄 team.jpg         # Foto kelompok
+│   │   └── 📄 team.jpg         # Foto kelompok
 │   └── 📁 js/                  # JavaScript files  
 │       └── 📄 script.js        # Script JavaScript
 └── 📄 README.md                # Dokumentasi proyek
