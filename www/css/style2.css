@@ -1,0 +1,147 @@
+.main-panel { 
+    padding: 20px; 
+}
+.title-box { 
+    background-color: white; 
+    border-radius: 10px; 
+    padding: 15px; 
+    margin-bottom: 20px; 
+}
+.description-box { 
+    background-color: white; 
+    border-radius: 10px;
+    padding: 15px; 
+}
+.navbar .navbar-static-top{
+    background:red
+}
+.legend-box{
+    padding:0;
+    display :flex;
+    margin:10px;
+}
+.color-box {
+    border-radius:5px;
+    width: 20px;
+    height: 20px;
+    background-color: #80B1D3;
+}
+.bslib-page-title{
+    width:100%;
+    text-align:center;
+    font-weight:bold;
+}
+.highlighted {
+    font-weight: bold;
+    background-color: yellow !important;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+.about-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.about-section {
+    background-color: #1c1c3a;
+    padding: 40px;
+    border-radius: 15px;
+    color: white;
+}
+.about-subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.team-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+}
+.faq-box {
+    background-color: #2a2a4d;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+.testimonial-box {
+    background-color: #333366;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.shiny-plot-output{
+  transition: 0.3s ease-in-out;
+}
+
+.tooltip-overlay {
+  position: relative;
+  width: 100%;
+  max-width: 300px;        
+  height: 300px;           
+  border-radius: 10px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.tooltip-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(28, 28, 58, 0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip-overlay:hover .overlay-text {
+  opacity: 1;
+}
+
+.tooltip-overlay img {
+  transition: transform 0.3s ease;
+}
+.tooltip-overlay:hover img {
+  transform: scale(1.05); /* efek zoom ringan saat hover */
+}
+
+.team-card {
+  text-align: center;
+  width: 100%;
+}
+
+.team-card .team-img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.team-card .team-name {
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: 16px;
+}

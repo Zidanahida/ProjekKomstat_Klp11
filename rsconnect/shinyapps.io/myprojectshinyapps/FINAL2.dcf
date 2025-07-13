@@ -1,0 +1,12 @@
+name: FINAL2
+title: FINAL2
+username: myprojectshinyapps
+account: myprojectshinyapps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15000008
+bundleId: 10583242
+url: https://myprojectshinyapps.shinyapps.io/FINAL2/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
