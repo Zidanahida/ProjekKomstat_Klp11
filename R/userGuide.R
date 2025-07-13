@@ -42,7 +42,7 @@ userGuide_ui <- function(id) {
           background-color: #f5f5f5;
           border-radius: 5px;
           margin-bottom: 10px;
-          color: #000; /* hitam */
+          color: #000;
         }
         .guide-footer {
           text-align: center;
@@ -51,7 +51,8 @@ userGuide_ui <- function(id) {
           color: #666;
         }
       "))
-    ),includeCSS("www/css/style.css"),
+    ),
+    includeCSS("www/css/style.css"),
     
     div(class = "guide-title", "Panduan Pengguna"),
     
@@ -62,7 +63,6 @@ userGuide_ui <- function(id) {
     ),
     
     div(class = "guide-section d-flex flex-column align-items-stretch",
-        
         tags$button(class = "btn btn-link text-decoration-none guide-btn", 
                     `data-bs-toggle` = "collapse", 
                     `data-bs-target` = "#collapse1", 
@@ -76,7 +76,9 @@ userGuide_ui <- function(id) {
                   tags$li("Menyentuh Map untuk Melihat Detail."),
                   tags$li("Seleksi Negara melalui Sidebar."),
                   tags$li("Lihat Visualisasi Tambahan di Bagian Bawah."),
-                  tags$li("Beralih antara Bar Chart dan Pie Chart.")
+                  tags$li("Beralih antara Bar Chart dan Pie Chart."),
+                  tags$li("Data Luas Wilayah dari World Bank untuk perbandingan."),
+                  tags$li("Thumbnail informasi terkait pemanasan global dan gas metana.")
                 )
             )
         ),
@@ -103,23 +105,8 @@ userGuide_ui <- function(id) {
         
         tags$button(class = "btn btn-link text-decoration-none guide-btn", 
                     `data-bs-toggle` = "collapse", 
-                    `data-bs-target` = "#collapse4", 
-                    "3. Tentang Kami"),
-        div(id = "collapse4", class = "collapse",
-            div(class = "guide-step",
-                tags$p("Halaman ini memperkenalkan siapa di balik platform ini dan menjawab pertanyaan umum dari pengguna."),
-                tags$ul(
-                  tags$li("Penjelasan bahwa CH4.SEasia adalah platform visualisasi emisi metana."),
-                  tags$li("Data dari FAO dan sumber terbuka lainnya."),
-                  tags$li("Pendekatan sains data digunakan untuk menyajikan informasi.")
-                )
-            )
-        ),
-        
-        tags$button(class = "btn btn-link text-decoration-none guide-btn", 
-                    `data-bs-toggle` = "collapse", 
                     `data-bs-target` = "#collapse3", 
-                    "4. Sumber"),
+                    "3. Sumber"),
         div(id = "collapse3", class = "collapse",
             div(class = "guide-step",
                 tags$p("Tab ini bertujuan untuk memberi transparansi dan akuntabilitas."),
@@ -127,6 +114,37 @@ userGuide_ui <- function(id) {
                   tags$li("Sumber: FAOSTAT, World Bank, dan GeoJSON ASEAN Maps."),
                   tags$li("Masing-masing panel memiliki tautan ke halaman resmi sumber."),
                   tags$li("Menggunakan berbagai paket R seperti ggplot2, shiny, leaflet, dsb.")
+                )
+            )
+        ),
+        
+        tags$button(class = "btn btn-link text-decoration-none guide-btn", 
+                    `data-bs-toggle` = "collapse", 
+                    `data-bs-target` = "#collapse4", 
+                    "4. Unduh Data"),
+        div(id = "collapse4", class = "collapse",
+            div(class = "guide-step",
+                tags$p("Menu ini memungkinkan pengguna untuk mengunduh data mentah yang telah difilter sesuai kebutuhan."),
+                tags$ul(
+                  tags$li("Pilih Negara dan Tahun yang diinginkan."),
+                  tags$li("Pilih Kategori Emisi."),
+                  tags$li("Klik tombol Unduh Data untuk mengunduh file.")
+                )
+            )
+        ),
+        
+        tags$button(class = "btn btn-link text-decoration-none guide-btn", 
+                    `data-bs-toggle` = "collapse", 
+                    `data-bs-target` = "#collapse5", 
+                    "5. Tentang Kami"),
+        div(id = "collapse5", class = "collapse",
+            div(class = "guide-step",
+                tags$p("Halaman ini memperkenalkan siapa di balik platform ini dan menjawab pertanyaan umum dari pengguna."),
+                tags$ul(
+                  tags$li("Penjelasan bahwa CH4.SEasia adalah platform visualisasi emisi metana."),
+                  tags$li("Data dari FAO dan sumber terbuka lainnya."),
+                  tags$li("Pendekatan sains data digunakan untuk menyajikan informasi."),
+                  tags$li("Struktur proyek, nama file, dan susunan folder tersedia di halaman ini.")
                 )
             )
         )
@@ -138,7 +156,7 @@ userGuide_ui <- function(id) {
     div(class = "guide-section",
         div(class = "faq-box",
             tags$strong("Apakah data bisa diunduh?"),
-            tags$p("Saat ini belum tersedia fitur unduh data mentah, namun grafik bisa disimpan sebagai gambar.")
+            tags$p("Ya, pengguna dapat mengunduh data yang telah difilter melalui menu Unduh Data.")
         ),
         div(class = "faq-box",
             tags$strong("Apakah hanya metana yang dianalisis?"),
@@ -146,7 +164,13 @@ userGuide_ui <- function(id) {
         ),
         div(class = "faq-box",
             tags$strong("Dari mana data berasal?"),
-            tags$p("Data berasal dari FAO (Food and Agriculture Organization) dan lembaga internasional lain yang terbuka.")
+            tags$p("Data berasal dari FAO (Food and Agriculture Organization), World Bank, dan peta GeoJSON ASEAN yang terbuka.")
+        ),
+        div(class = "faq-box",
+            tags$strong("Bagaimana cara menjalankan aplikasi ini secara lokal?"),
+            tags$p("Unduh ZIP dari repositori, ekstrak, install package yang diperlukan, lalu jalankan `shiny::runApp()`. Informasi lebih lanjut dapat diakses di: "),
+            tags$span("GitHub Repositories :",tags$a(href = "https://github.com/Zidanahida/ProjekKomstat_Klp11", target = "_blank", "Click Here"))
+            
         )
     )
   )
