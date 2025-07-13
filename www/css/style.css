@@ -36,8 +36,9 @@
     order: -1; /* munculkan foto di atas */
   }
   .about-left, .about-right {
-    order: 0;
-    transform: translateY(0);
+      font-size:0.8rem;
+      order: 0;
+      transform: translateY(0);
   }
   .about-left, .about-center, .about-right {
       flex: none; 
