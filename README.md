@@ -33,15 +33,15 @@ Tata cara instalasi lokal :
 ## 📁️ Struktur Folder
 CH4DashBoard/  
 ├── 📄 testRun.R  
-├── 📄 global.R 
+├── 📄 global.R  
 ├── 📄 server.R  
 ├── 📄 ui.R  
 ├── 📁 data/  
 │   ├── 📄 AsiaTenggara.json   
-│   ├── 📄 Data Area.xls 
+│   ├── 📄 Data Area.xls  
 │   ├── 📄 Data FAO.xls   
-│   └── 📄 sea_countries.geojson.csv
-├── 📁 R/ 
+│   └── 📄 sea_countries.geojson.csv  
+├── 📁 R/  
 │   ├── 📄 sumber.R  
 │   ├── 📄 home.R  
 │   ├── 📄 aboutUs.R  
@@ -60,7 +60,7 @@ CH4DashBoard/
 │   │   ├── 📄 amel.jpg   
 │   │   └── 📄 team.jpg  
 │   └── 📁 js/  
-│       └── 📄 script.js  
+│       └─── 📄 script.js  
 └── 📄 README.md  
 
 
