@@ -32,36 +32,36 @@ Tata cara instalasi lokal :
 
 ## 📁️ Struktur Folder
 CH4DashBoard/  
-├── 📄 testRun.R  --------------# Entry point aplikasi Shiny  
-├── 📄 global.R  ---------------# Konfigurasi variabel global dan library  
-├── 📄 server.R  ---------------# Server logic dan pengolahan data
-├── 📄 ui.R  -------------------# User interface utama  
-├── 📁 data/  ------------------# Sumber data yang digunakan
-│   ├── 📄 AsiaTenggara.json  --# Data json Asia Tenggara  
-│   ├── 📄 Data Area.xls  ------# Data luas wilayah negara 
-│   ├── 📄 Data FAO.xls  -------# Data emisi gas metana dari FAO  
-│   └── 📄 sea_countries.geojson.csv # Data GeoJSON   
-├── 📁 R/  ---------------------# Modul UI
-│   ├── 📄 sumber.R  -----------# UI sumber data  
-│   ├── 📄 home.R  -------------# UI halaman beranda  
-│   ├── 📄 aboutUs.R  ----------# UI halaman tentang kami  
-│   ├── 📄 HOME2.R  ------------# UI beranda alternatif  
-│   └── 📄 menu.R  -------------# UI menu navigasi  
-├── 📁 rsconnect/  -------------# Konfigurasi deployment  
+├── 📄 testRun.R  
+├── 📄 global.R 
+├── 📄 server.R  
+├── 📄 ui.R  
+├── 📁 data/  
+│   ├── 📄 AsiaTenggara.json   
+│   ├── 📄 Data Area.xls 
+│   ├── 📄 Data FAO.xls   
+│   └── 📄 sea_countries.geojson.csv
+├── 📁 R/ 
+│   ├── 📄 sumber.R  
+│   ├── 📄 home.R  
+│   ├── 📄 aboutUs.R  
+│   ├── 📄 HOME2.R  
+│   └── 📄 menu.R  
+├── 📁 rsconnect/  
 │   └── 📁 shinyapps.io/  
 │       └── 📁 myprojectshinyapps/  
-│           └── 📄 FINAL2.dcf  -# File deployment config  
-├── 📁 www/  -------------------# Asset web  
-│   ├── 📁 css/  ---------------# Stylesheet  
+│           └── 📄 FINAL2.dcf   
+├── 📁 www/  
+│   ├── 📁 css/  
 │   │   └── 📄 style.css        
-│   ├── 📁 img/  ---------------# Gambar dan foto  
-│   │   ├── 📄 Ari.jpg  --------# Foto profil Ari  
-│   │   ├── 📄 Zidan.jpg  ------# Foto profil Zidan  
-│   │   ├── 📄 amel.jpg  -------# Foto profil Amel  
-│   │   └── 📄 team.jpg  -------# Foto kelompok
-│   └── 📁 js/  ----------------# JavaScript files  
-│       └── 📄 script.js  ------# Script JavaScript
-└── 📄 README.md  --------------# Dokumentasi proyek
+│   ├── 📁 img/  
+│   │   ├── 📄 Ari.jpg  
+│   │   ├── 📄 Zidan.jpg  
+│   │   ├── 📄 amel.jpg   
+│   │   └── 📄 team.jpg  
+│   └── 📁 js/  
+│       └── 📄 script.js  
+└── 📄 README.md  
 
 
 ## 🔗 Sumber Data
