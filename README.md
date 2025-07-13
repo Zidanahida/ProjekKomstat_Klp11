@@ -18,8 +18,8 @@ Dashboard ini menyajikan informasi visual terkait **emisi gas metana (CH₄)** d
    - `Sumber Data`: Penjelasan sumber + link
    - `Panduan`: Informasi tambahan dan referensi
 
-dashboard/
-├── 📄 app.R                    # Entry point aplikasi Shiny
+dashboard/  
+├── 📄 app.R                    # Entry point aplikasi Shiny  
 ├── 📄 global.R                 # Konfigurasi global dan library
 ├── 📄 server.R                 # Server logic utama
 ├── 📄 ui.R                     # User interface utama
