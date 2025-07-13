@@ -15,8 +15,8 @@ Dashboard ini menyajikan visualisasi terkait **emisi gas metana (CH₄)**  yang 
 1. Jalankan file `testRun.R` pada aplikasi shiny pengguna atau dapat langsung mengakses link berikut. shiny.io....
 2. Pengguna dapat mengeksplor fitur-fitur dari masing-masing tab yang ada :
    - `Beranda`: Visualisasi dasar dan informasi mengenai emisi metana di Asia Tenggara
-   - `Menu`: Visualisasi lanjutan
-   --- `Emisi Gas Metana Berdasarkan Kategori Sumber`: Grafik batang sebagai pembanding pelepasan gas metana dari berbagai faktor.
+   - `Menu`: Visualisasi lanjutan  
+   --- `Emisi Gas Metana Berdasarkan Kategori Sumber`: Grafik batang sebagai pembanding pelepasan gas metana dari berbagai faktor.  
    --- `Time Series etana Berdasarkan Kategori Sumbern dan Negara`: Grafik time series pelepasan gas metana dari setiap negara.
    - `Sumber`: Penjelasan sumber data dan metadata
    - `Unduh Data`: Menu pengunduhan data
