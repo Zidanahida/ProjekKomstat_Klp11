@@ -12,8 +12,8 @@ Dashboard ini menyajikan visualisasi terkait **emisi gas metana (CH₄)**  yang 
 
 ## 🚀 Cara Menggunakan
 
-1. Jalankan file `app.R` atau buka `dashboard.Rproj` (jika ada).
-2. Navigasi antar tab seperti:
+1. Jalankan file `testRun.R` pada aplikasi shiny pengguna atau dapat langsung mengakses link berikut. shiny.io....
+2. Pengguna dapat mengeksplor fitur-fitur dari masing-masing tab yang ada :
    - `Beranda`: Visualisasi dasar dan informasi mengenai emisi metana di Asia Tenggara
    - `Menu`: Visualisasi lanjutan
    --- `Emisi Gas Metana Berdasarkan Kategori Sumber`: Grafik batang sebagai pembanding pelepasan gas metana dari berbagai faktor.
