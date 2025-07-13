@@ -30,7 +30,14 @@
     max-height: 300px;
   }
   .about-container {
-      flex-direction: column; 
+    flex-direction: column;
+  }
+  .about-center {
+    order: -1; /* munculkan foto di atas */
+  }
+  .about-left, .about-right {
+    order: 0;
+    transform: translateY(0);
   }
   .about-left, .about-center, .about-right {
       flex: none; 
@@ -124,32 +131,33 @@
   border-radius: 15px;
   color: white;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  height: 60%;
-  display: flex;
   text-align: justify;
+  flex-grow: 1;
+  display: flex;
   flex-direction: column;
-  justify-content: center; 
-  min-height: 180px; 
+  justify-content: center;
+  transform: translateY(50px);
 }
 
 .about-container {
   display: flex;
+  flex-wrap: wrap; /* memungkinkan responsif */
   gap: 20px;
-  align-items: stretch; 
+  align-items: stretch;
+  justify-content: center;
 }
-
-
 .about-left, .about-center, .about-right {
-  flex: 1;
-  display: flex; 
+  flex: 1 1 300px; /* fleksibel, minimal 300px */
+  display: flex;
   flex-direction: column;
 }
+
 
 #about-img {
   width: 100%;
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  height: 100%; 
   min-height: 350px;
+  max-height: 100%;
 }
