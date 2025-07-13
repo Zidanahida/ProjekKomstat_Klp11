@@ -1,11 +1,8 @@
-# aboutUs.R
-
 addResourcePath("ImgPath", "www/img")
 
 tentangKami_ui <- function(id) {
   ns <- NS(id)
   fluidPage(
-    # Link to the external CSS file
     tags$head(
       tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
     ),
@@ -16,31 +13,31 @@ tentangKami_ui <- function(id) {
             class = "about-left",
             div(class = "about-section",
                 tags$h3("Siapa Kami?"),
-                tags$p("Kami bertiga adalah seorang mahasiswa STIS jurusan Komputasi Statistik yang sedang menyelesaikan tugas akhir untuk mata kuliah Komputasi Statistik.
-                       Tugas kami adalah membuat dashboard tentang climate change yang sedang hangat dibicarakan.")
+                tags$p("Kami adalah tiga mahasiswa dari Program Studi Komputasi Statistik, Politeknik Statistika STIS, yang saat ini sedang mengerjakan tugas akhir untuk mata kuliah Komputasi Statistik. 
+                        Proyek ini merupakan bagian dari upaya kami dalam memberikan informasi akan ancaman gas metana yang jarang menjadi sorotan bagi khalayak publik")
             )
         ),
         div(id = "about-img-box", class = "about-center",
-            # Using a placeholder image URL
             img(src = "ImgPath/Team.jpg", id = "about-img")
         ),
         div(id = "about-text-box-right",
             class = "about-right",
             div(class = "about-section",
                 tags$h3("Apa Tujuan Kami?"),
-                tags$p("Tujuan kami adalah untuk meningkatkan kesadaran tentang emisi metana di Asia Tenggara, menyediakan data yang transparan, dan mendukung upaya mitigasi perubahan iklim melalui informasi yang akurat dan mudah diakses.")
+                tags$p("Dashboard ini dikembangkan untuk mengidentifikasi sektor-sektor utama yang berkontribusi terhadap emisi metana di Asia Tenggara. Melalui analisis ini, diharapkan dapat dihasilkan dasar 
+                       ilmiah yang mendukung pengambilan kebijakan mitigasi yang lebih efektif dan terfokus pada sektor-sektor prioritas. Sekaligus memberikan informasi yang interaktif dan mudah diterima oleh 
+                       masyarakat umum")
             )
         )
     ),
-
+    
     div(class = "about-team", "Tim Kami"),
     fluidRow(
       column(4,
              div(class = "team-card",
                  div(class = "tooltip-overlay",
-                     # Using a placeholder image URL
                      img(src = "ImgPath/Ari.jpg", class = "team-img"),
-                     div(class = "overlay-text", "Ari fokus pada analisis data dan visualisasi.")
+                     div(class = "overlay-text", "Ari bertanggung jawab dalam analisis data dan visualisasi.")
                  ),
                  div(class = "team-name", "Ari")
              )
@@ -48,9 +45,8 @@ tentangKami_ui <- function(id) {
       column(4,
              div(class = "team-card",
                  div(class = "tooltip-overlay",
-                     # Using a placeholder image URL
                      img(src = "ImgPath/Zidan.jpg", class = "team-img"),
-                     div(class = "overlay-text", "Zidan fokus pada pemodelan data.")
+                     div(class = "overlay-text", "Zidan berfokus pada pengolahan dan pemodelan data.")
                  ),
                  div(class = "team-name", "Zidan")
              )
@@ -58,9 +54,8 @@ tentangKami_ui <- function(id) {
       column(4,
              div(class = "team-card",
                  div(class = "tooltip-overlay",
-                     # Using a placeholder image URL
                      img(src = "ImgPath/Amel.jpg", class = "team-img"),
-                     div(class = "overlay-text", "Amel fokus pada pengembangan antarmuka pengguna.")
+                     div(class = "overlay-text", "Amel menangani pengembangan antarmuka pengguna (UI) aplikasi.")
                  ),
                  div(class = "team-name", "Amel")
              )
