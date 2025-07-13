@@ -11,9 +11,15 @@ Dashboard ini menyajikan visualisasi terkait **emisi gas metana (CH₄)**  yang 
 - **Thumbnail Informasi Terkait** pemanasan global dan gas metana.
 
 ## 🚀 Cara Menggunakan
+Pengguna dapat langsung mengakses web berikut : ...
+atau melakukan instalasi secara lokal pada aplikasi shiny pengguna.
 
-1. Jalankan file `testRun.R` pada aplikasi shiny pengguna atau dapat langsung mengakses link berikut. shiny.io....
-2. Pengguna dapat mengeksplor fitur-fitur dari masing-masing tab yang ada :
+Tata cara instalasi lokal :
+1. Unduh seluruh file yang ada pada Repository ini dalam format `ZIP`.
+2. Ekstrak file `ZIP` yang telah diunduh.
+3. Buka file `testRun.R` dan install seluruh packages yang diperlukan.
+4. Jalankan `shiny::runApp()`
+5. Pengguna dapat mengeksplor fitur-fitur dari masing-masing tab yang ada :
    - `Beranda`: Visualisasi dasar dan informasi mengenai emisi metana di Asia Tenggara
    - `Menu`: Visualisasi lanjutan  
    --- `Emisi Gas Metana Berdasarkan Kategori Sumber`: Grafik batang sebagai pembanding pelepasan gas metana dari berbagai faktor.  
@@ -23,7 +29,9 @@ Dashboard ini menyajikan visualisasi terkait **emisi gas metana (CH₄)**  yang 
    - `Tentang Kami`: Informasi pengembang
    - `UserGuide`: Informasi cara penggunaan dan video penggunaan dashboard
 
-dashboard/  
+
+## 📁️ Struktur Folder
+CH4DashBoard/  
 ├── 📄 testRun.R                # Entry point aplikasi Shiny  
 ├── 📄 global.R                 # Konfigurasi variabel global dan library  
 ├── 📄 server.R                 # Server logic dan pengolahan data
@@ -69,6 +77,7 @@ dashboard/
 - **CSS** dan tema `bslib` untuk UI
 
 ## 📦 Install Package R yang Dibutuhkan
+Jika menajalankan 
 
 ```r
 install.packages(c("shiny", "dplyr", "ggplot2", "leaflet", "plotly", "sf", "readxl", "tidyr", "bslib", "TD", "vembedr"))
