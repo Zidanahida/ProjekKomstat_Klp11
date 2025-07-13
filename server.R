@@ -360,7 +360,50 @@ shinyServer(function(input, output, session) {
       ) +
       expand_limits(y = 0) +
       scale_y_continuous(labels = scales::comma)
-  })  
+  })
+  
+  # --- Tambahkan bagian ini untuk logika interpretasi dinamis menu 2 ---
+  output$dynamic_interpretation_menu2 <- renderUI({
+    # Pastikan ada lebih dari satu negara yang dipilih untuk perbandingan
+    if (length(input$negara) > 1) {
+      # Gunakan AdjTimeSeries untuk perhitungan, sesuai dengan sumber data grafik plotEmisi
+      # Kolom yang relevan adalah 'Area' dan 'avg_emissions_adj'
+      data_for_comparison <- AdjTimeSeries %>%
+        filter(Area %in% input$negara) %>%
+        group_by(Area) %>%
+        summarise(
+          rata_rata_emisi = mean(avg_emissions_adj, na.rm = TRUE) # Rata-rata dari kolom avg_emissions_adj
+        ) %>%
+        ungroup()
+      
+      # Temukan negara dengan rata-rata emisi tertinggi
+      negara_tertinggi <- data_for_comparison %>%
+        arrange(desc(rata_rata_emisi)) %>%
+        slice(1)
+      
+      # Temukan negara dengan rata-rata emisi terendah
+      negara_terendah <- data_for_comparison %>%
+        arrange(rata_rata_emisi) %>%
+        slice(1)
+      
+      # Buat teks interpretasi dalam format HTML
+      HTML(paste0(
+        "<p><strong>Analisis Perbandingan Emisi (Rata-rata Historis):</strong></p>",
+        "<ul>",
+        "<li>Dari negara-negara yang Anda pilih, <strong>", negara_tertinggi$Area, "</strong> menunjukkan rata-rata emisi metana tertinggi (sekitar ", format(round(negara_tertinggi$rata_rata_emisi, 3), nsmall = 3), " Kt sepanjang periode datanya.</li>",
+        "<li>Sementara itu, <strong>", negara_terendah$Area, "</strong> menunjukkan rata-rata emisi metana terendah (sekitar ", format(round(negara_terendah$rata_rata_emisi, 3), nsmall = 3), " Kt 1000 Ton) sepanjang periode datanya.</li>",
+        "</ul>",
+        "<p><i>Catatan: Rata-rata ini dihitung dari nilai emisi asli setiap negara. Hal ini terlepas dari opsi 'Moving Average' yang dipilih pada grafik. Moving Average yang dipilih tidak akan mengubah interpretasi yang ada karena moving average hanya mengubah visual dari time seriesnya, bukan untuk mengubah nilai rata-rata yang dihasilkan</i></p>"
+      ))
+    } else if (length(input$negara) == 1) {
+      # Pesan jika hanya satu negara yang dipilih
+      HTML("<p>Pilih **lebih dari satu** negara untuk melihat perbandingan emisi tertinggi dan terendah.</p>")
+    } else {
+      # Pesan jika tidak ada negara yang dipilih
+      HTML("<p>Pilih setidaknya satu negara dari daftar di samping untuk menampilkan grafik dan analisis.</p>")
+    }
+  })
+  # --- Akhir logika interpretasi dinamis menu 2 ---
   
   ####========= UNDUH DATA =========#####
   
