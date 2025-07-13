@@ -20,34 +20,34 @@ Dashboard ini menyajikan informasi visual terkait **emisi gas metana (CH₄)** d
 
 dashboard/  
 ├── 📄 app.R                    # Entry point aplikasi Shiny  
-├── 📄 global.R                 # Konfigurasi global dan library
-├── 📄 server.R                 # Server logic utama
-├── 📄 ui.R                     # User interface utama
-├── 📁 data/                    # Data dan file pendukung
-│   ├── 📄 AsiaTenggara.json    # Data geografis Asia Tenggara
-│   ├── 📄 Data Area.xls        # Data area/wilayah
-│   ├── 📄 Data FAO.xls         # Data emisi dari FAO
-│   └── 📄 sea_countries.geojson.csv # Data GeoJSON negara Asia Tenggara
-├── 📁 R/                       # Modul dan fungsi R
-│   ├── 📄 sumber.R             # Modul sumber data
-│   ├── 📄 home.R               # Modul halaman beranda
-│   ├── 📄 aboutUs.R            # Modul halaman tentang kami
-│   ├── 📄 HOME2.R              # Modul beranda alternatif
-│   └── 📄 menu.R               # Modul menu navigasi
-├── 📁 rsconnect/               # Konfigurasi deployment
-│   └── 📁 shinyapps.io/
-│       └── 📁 myprojectshinyapps/
-│           └── 📄 FINAL2.dcf   # File deployment config
-├── 📁 www/                     # Asset web statis
-│   ├── 📁 css/                 # Stylesheet
-│   │   └── 📄 style.css        # Style kustom
-│   ├── 📁 img/                 # Gambar dan foto
-│   │   ├── 📄 Ari.jpg          # Foto profil Ari
-│   │   ├── 📄 Zidan.jpg        # Foto profil Zidan
-│   │   └── 📄 amel.jpg         # Foto profil Amel
-│   └── 📁 js/                  # JavaScript files
-│       ├── 📄 index.html       # Template HTML
-│       └── 📄 script.js        # Script JavaScript kustom
+├── 📄 global.R                 # Konfigurasi global dan library  
+├── 📄 server.R                 # Server logic utama  
+├── 📄 ui.R                     # User interface utama  
+├── 📁 data/                    # Data dan file pendukung  
+│   ├── 📄 AsiaTenggara.json    # Data geografis Asia Tenggara  
+│   ├── 📄 Data Area.xls        # Data area/wilayah  
+│   ├── 📄 Data FAO.xls         # Data emisi dari FAO  
+│   └── 📄 sea_countries.geojson.csv # Data GeoJSON negara Asia Tenggara  
+├── 📁 R/                       # Modul dan fungsi R  
+│   ├── 📄 sumber.R             # Modul sumber data  
+│   ├── 📄 home.R               # Modul halaman beranda  
+│   ├── 📄 aboutUs.R            # Modul halaman tentang kami  
+│   ├── 📄 HOME2.R              # Modul beranda alternatif  
+│   └── 📄 menu.R               # Modul menu navigasi  
+├── 📁 rsconnect/               # Konfigurasi deployment  
+│   └── 📁 shinyapps.io/  
+│       └── 📁 myprojectshinyapps/  
+│           └── 📄 FINAL2.dcf   # File deployment config  
+├── 📁 www/                     # Asset web statis  
+│   ├── 📁 css/                 # Stylesheet  
+│   │   └── 📄 style.css        # Style kustom  
+│   ├── 📁 img/                 # Gambar dan foto  
+│   │   ├── 📄 Ari.jpg          # Foto profil Ari  
+│   │   ├── 📄 Zidan.jpg        # Foto profil Zidan  
+│   │   └── 📄 amel.jpg         # Foto profil Amel  
+│   └── 📁 js/                  # JavaScript files  
+│       ├── 📄 index.html       # Template HTML  
+│       └── 📄 script.js        # Script JavaScript kustom  
 └── 📄 README.md                # Dokumentasi proyek
 
 
