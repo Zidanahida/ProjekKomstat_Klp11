@@ -103,17 +103,17 @@ home_ui <- function(id) {
                           h3("Informasi mengenai Pemanasan Global dan Methana (CH4)",
                              style = "font-weight:600; margin-bottom: 20px;"),
                           
-                          # ⬅️ Carousel wrapper: horizontal scroll container
+                          # Carousel wrapper
                           tags$div(
                             style = "
-        display: flex;
-        overflow-x: auto;
-        gap: 20px;
-        padding-bottom: 10px;
-        scrollbar-width: thin;
-      ",
+                                      display: flex;
+                                      overflow-x: auto;
+                                      gap: 20px;
+                                      padding-bottom: 10px;
+                                      scrollbar-width: thin;
+                                    ",
                             
-                            # ⬅️ Lapply card list
+                            # lapply card list
                             lapply(
                               list(
                                 list(
@@ -139,23 +139,23 @@ home_ui <- function(id) {
                                   img = "https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Seal_of_ASEAN.svg/1200px-Seal_of_ASEAN.svg.png",
                                   title = "Cara mengatasi CH4 dengan kebijakan-kebijakan tertentu",
                                   desc = "Negara-negara ASEAN menanggulangi emisi gas metana melalui berbagai upaya, termasuk proyek kerjasama, pengelolaan limbah, dan perubahan praktik pertanian. Proyek Kerjasama ASEAN-Korea untuk Mitigasi Metana (AKCMM) adalah salah satu contoh upaya bersama untuk mempercepat tindakan terhadap emisi metana. 
-                       Berikut adalah beberapa cara yang dilakukan negara-negara ASEAN untuk menanggulangi gas metana:
-                       1. Proyek Kerjasama dan Dukungan Internasional:
-                       Proyek AKCMM : Kamboja menjadi tuan rumah peluncuran proyek ini, yang bertujuan untuk mengurangi emisi metana di kawasan ASEAN, menurut akstcc.org.
-                       Transfer Teknologi dan Keuangan : Dukungan dari negara maju, seperti Korea Selatan melalui AKCMM, dapat membantu negara-negara ASEAN dalam mengadopsi teknologi dan praktik terbaik untuk mitigasi metana. 
-                       2. Pengelolaan Limbah:
-                       Pengolahan Sampah Organik : Mengelola sampah organik menjadi kompos dapat mengurangi emisi metana dari tempat pembuangan akhir (TPA), menurut Transisi Energi.
-                       Pengurangan Pemborosan Makanan : Merencanakan menu makanan, memilih makanan dengan emisi rendah, menyimpan makanan dengan benar, dan mengelola sisa makanan dapat mengurangi jumlah sampah yang masuk ke TPA, dilansir Transisi Energi. 
-                       3. Pertanian Berkelanjutan:
-                       Inovasi Pertanian Padi : Mengembangkan praktik pertanian padi yang lebih efisien dan mengurangi emisi metana dari lahan sawah, menurut Universitas Muhammadiyah Kotabumi. 
-                       Pengelolaan Ternak : Mengadopsi praktik pengelolaan ternak yang mengurangi emisi metana dari sistem pencernaan hewan, mengacu pada Satuplatform. 
-                       4. Pemantauan dan Pelaporan Emisi:
-                       Pengumpulan Data ESG : Mengumpulkan dan menganalisis data Environmental, Social, and Governance (ESG) secara akurat dan efisien untuk melacak emisi karbon, termasuk metana, menurut Satuplatform.
-                       Penyusunan Laporan Emisi : Membuat laporan emisi metana yang memenuhi standar internasional dan nasional untuk transparansi dan akuntabilitas. 
-                       5. Peningkatan Kesadaran:
-                       Edukasi Publik : Meningkatkan kesadaran masyarakat tentang dampak gas metana terhadap perubahan iklim dan pentingnya mitigasi. 
-                       Kolaborasi : Bekerja sama dengan berbagai pemangku kepentingan, termasuk sektor swasta, organisasi masyarakat sipil, dan akademisi, untuk mencapai tujuan mitigasi metana. 
-                       Dengan berbagai upaya ini, negara-negara ASEAN berupaya untuk mengurangi emisi gas metana dan berkontribusi pada upaya global untuk mengatasi perubahan iklim.",
+                                           Berikut adalah beberapa cara yang dilakukan negara-negara ASEAN untuk menanggulangi gas metana:
+                                           1. Proyek Kerjasama dan Dukungan Internasional:
+                                           Proyek AKCMM : Kamboja menjadi tuan rumah peluncuran proyek ini, yang bertujuan untuk mengurangi emisi metana di kawasan ASEAN, menurut akstcc.org.
+                                           Transfer Teknologi dan Keuangan : Dukungan dari negara maju, seperti Korea Selatan melalui AKCMM, dapat membantu negara-negara ASEAN dalam mengadopsi teknologi dan praktik terbaik untuk mitigasi metana. 
+                                           2. Pengelolaan Limbah:
+                                           Pengolahan Sampah Organik : Mengelola sampah organik menjadi kompos dapat mengurangi emisi metana dari tempat pembuangan akhir (TPA), menurut Transisi Energi.
+                                           Pengurangan Pemborosan Makanan : Merencanakan menu makanan, memilih makanan dengan emisi rendah, menyimpan makanan dengan benar, dan mengelola sisa makanan dapat mengurangi jumlah sampah yang masuk ke TPA, dilansir Transisi Energi. 
+                                           3. Pertanian Berkelanjutan:
+                                           Inovasi Pertanian Padi : Mengembangkan praktik pertanian padi yang lebih efisien dan mengurangi emisi metana dari lahan sawah, menurut Universitas Muhammadiyah Kotabumi. 
+                                           Pengelolaan Ternak : Mengadopsi praktik pengelolaan ternak yang mengurangi emisi metana dari sistem pencernaan hewan, mengacu pada Satuplatform. 
+                                           4. Pemantauan dan Pelaporan Emisi:
+                                           Pengumpulan Data ESG : Mengumpulkan dan menganalisis data Environmental, Social, and Governance (ESG) secara akurat dan efisien untuk melacak emisi karbon, termasuk metana, menurut Satuplatform.
+                                           Penyusunan Laporan Emisi : Membuat laporan emisi metana yang memenuhi standar internasional dan nasional untuk transparansi dan akuntabilitas. 
+                                           5. Peningkatan Kesadaran:
+                                           Edukasi Publik : Meningkatkan kesadaran masyarakat tentang dampak gas metana terhadap perubahan iklim dan pentingnya mitigasi. 
+                                           Kolaborasi : Bekerja sama dengan berbagai pemangku kepentingan, termasuk sektor swasta, organisasi masyarakat sipil, dan akademisi, untuk mencapai tujuan mitigasi metana. 
+                                           Dengan berbagai upaya ini, negara-negara ASEAN berupaya untuk mengurangi emisi gas metana dan berkontribusi pada upaya global untuk mengatasi perubahan iklim.",
                                   links = list(
                                     list(label = "ASEAN-Korea Methane Project", url = "https://www.aseanrokfund.com/our-works/project-asean-korea-cooperation-on-methane-mitigation"),
                                     list(label = "Jejak Karbon Makanan", url = "https://transisienergi.id/jejak-karbon-dari-yang-kita-makan-dan-sisakan/"),
@@ -170,32 +170,45 @@ home_ui <- function(id) {
                                   link = "https://skepticalscience.com/translation.php?a=76&l=24"
                                 )
                               ) ,
+                              
                               function(card) {
                                 tags$div(
+                                  
                                   style = "
-              flex: 0 0 300px;
-              background-color: #ffffff;
-              color: #111827;
-              border-radius: 12px;
-              padding: 20px;
-              box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-              display: flex;
-              flex-direction: column;
-              justify-content: start;
-              height: 360px;
-              overflow: hidden;
-              transition: transform 0.2s ease;
-            ",
-                                  onmouseover = "this.style.transform='scale(1.01)'",
+                                          cursor : pointer;
+                                          flex: 0 0 300px;
+                                          background-color: #fff;
+                                          color: #111827;
+                                          border-radius: 12px;
+                                          padding: 20px;
+                                          box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+                                          display: flex;
+                                          flex-direction: column;
+                                          justify-content: start;
+                                          height: 400px;
+                                          overflow: hidden;
+                                          transition: transform 0.5s ease-in-out;
+                                        ",
+                                  onmouseover = "this.style.transform='scale(1.03)'",
                                   onmouseout = "this.style.transform='scale(1)'",
                                   
-                                  # Gambar (opsional)
-                                  if (!is.null(card$img)) tags$img(src = card$img, style = "height: 32px; margin-bottom: 10px;"),
+                                  # Gambar
+                                  if (!is.null(card$img)) tags$img(src = card$img, 
+                                                                   style = "
+                                                                            height: 70px;
+                                                                            width: auto;
+                                                                            object-fit: contain;
+                                                                            display: block;
+                                                                            margin-bottom: 10px;
+                                                                            max-width: 100%;
+                                                                          "
+
+                                                                   ),
                                   
                                   # Judul
                                   tags$h5(card$title, style = "font-size: 16px; font-weight:600; margin-bottom: 10px;"),
                                   
-                                  # Isi scrollable (⬇️ bagian ini yang overflow-y)
+                                  # Isi scrollable 
                                   tags$div(
                                     style = "overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.5; padding-right: 5px;",
                                     tags$p(card$desc),
