@@ -260,29 +260,28 @@ shinyServer(function(input, output, session) {
     if (input$select_all) {
       updateCheckboxGroupInput(session, "kategori", selected = unique(dataClean$Item))
     } else {
-      updateCheckboxGroupInput(session, "kategori", selected = character(0))  # Reset jika tidak dipilih
+      updateCheckboxGroupInput(session, "kategori", selected = character(0))
     }
   })
-  
-  filteredData <- reactive({
-    req(input$negara, input$kategori)  # Validasi input
-    
+
+  filteredDatas <- reactive({ # Data reaktif untuk barChart Menu 1
+    req(input$negara_pilih, input$kategori) # <<< KOREKSI DI SINI: pakai input$negara_pilih
+
     dataClean %>%
-      filter(Area == input$negara, Item %in% input$kategori, Year>=2019 & Year <=2022) %>%
+      filter(Area == input$negara_pilih, Item %in% input$kategori, Year>=2019 & Year <=2022) %>% # <<< KOREKSI DI SINI: pakai input$negara_pilih
       group_by(Item) %>%
       summarise(avg_emission = sum(Value, na.rm = TRUE)/(2022-2019), .groups = 'drop')
   })
-  
+
   output$barChart <- renderPlotly({
-    df <- filteredData()
-    
-    # Validasi data tidak kosong
+    df <- filteredDatas()
+
     if (nrow(df) == 0) {
       return(plotly_empty() %>% layout(title = "Tidak ada data yang tersedia"))
     }
-    
+
     p <- ggplot(df, aes(x = reorder(Item, avg_emission), y = avg_emission, fill = Item,
-                        text = paste("Kategori:", Item, 
+                        text = paste("Kategori:", Item,
                                      "<br>Rata-rata Emisi:", round(avg_emission, 2), "Kt"))) +
       geom_col(width = 0.7) +
       labs(
@@ -295,8 +294,7 @@ shinyServer(function(input, output, session) {
         legend.position = "none",
         axis.text.x = element_text(angle = 45, hjust = 1)
       )
-    
-    # Konversi ke plotly
+
     ggplotly(p, tooltip = "text") %>%
       layout(
         xaxis = list(
@@ -312,10 +310,45 @@ shinyServer(function(input, output, session) {
         ),
         margin = list(b = 100, l = 50, r = 50, t = 50)
       ) %>%
-      config(displayModeBar = TRUE, 
+      config(displayModeBar = TRUE,
              modeBarButtonsToRemove = c("pan2d", "select2d", "lasso2d", "autoScale2d"))
   })
-  
+
+  # --- Tambahkan bagian ini untuk logika interpretasi dinamis Menu 1 ---
+  output$dynamic_interpretation_menu1 <- renderUI({ # ID output untuk Menu 1
+    # Ambil data yang sudah difilter untuk barChart
+    df_for_interpretation <- filteredDatas()
+
+    # Pastikan ada lebih dari satu kategori yang dipilih untuk perbandingan
+    if (nrow(df_for_interpretation) > 1) {
+      # Temukan kategori dengan emisi rata-rata tertinggi
+      kategori_tertinggi <- df_for_interpretation %>%
+        arrange(desc(avg_emission)) %>%
+        slice(1)
+
+      # Temukan kategori dengan emisi rata-rata terendah
+      kategori_terendah <- df_for_interpretation %>%
+        arrange(avg_emission) %>%
+        slice(1)
+
+      # Buat teks interpretasi dalam format HTML
+      HTML(paste0(
+        "<p><strong>Analisis Kategori Sumber Emisi:</strong></p>",
+        "<ul>",
+        "<li>Untuk negara <strong>", input$negara_pilih, "</strong>, kategori <strong>", kategori_tertinggi$Item, "</strong> menunjukkan rata-rata emisi tertinggi (sekitar ", format(round(kategori_tertinggi$avg_emission, 2), nsmall = 2), " Kt) di antara kategori yang dipilih.</li>",
+        "<li>Sementara itu, kategori <strong>", kategori_terendah$Item, "</strong> menunjukkan rata-rata emisi terendah (sekitar ", format(round(kategori_terendah$avg_emission, 2), nsmall = 2), " Kt) di antara kategori yang dipilih.</li>",
+        "</ul>",
+        "<p><i>Analisis ini didasarkan pada rata-rata emisi dari tahun 2019-2022 untuk negara dan kategori yang Anda pilih.</i></p>"
+      ))
+    } else if (nrow(df_for_interpretation) == 1) {
+      # Pesan jika hanya satu kategori yang dipilih
+      HTML("<p>Pilih **lebih dari satu** kategori untuk melihat perbandingan emisi sumber tertinggi dan terendah.</p>")
+    } else {
+      # Pesan jika tidak ada data atau kategori yang dipilih
+      HTML("<p>Pilih negara dan setidaknya satu kategori dari daftar di samping untuk menampilkan grafik dan analisis.</p>")
+    }
+  })
+  # --- Akhir logika interpretasi dinamis Menu 1 ---
   
   ####========= Time Series Metana Berdasarkan Kategori Sumber dan Negara(menu 2) =========#####
   datasetInput <- reactive({

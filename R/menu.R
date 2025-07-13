@@ -1,9 +1,13 @@
+# menu.R
+
 menu1_ui <- function(id) {
   ns <- NS(id)
   tabPanel("Emisi Gas Metana Berdasarkan Kategori Sumber",
            sidebarLayout(sidebarPanel(selectInput("negara_pilih", "Negara:", choices = unique(dataClean$Area), selected = "Indonesia"),
                                       checkboxGroupInput("kategori", "Kategori:", choices = unique(dataClean$Item),
-                                                         selected = unique(dataClean$Item)[c(2,3,5)]),
+                                                         # >>> PERUBAHAN DI BARIS INI <<<
+                                                         selected = c("Manure Management", "Fires in organic soils", "Agrifood Systems Waste Disposal")),
+                                      # >>> AKHIR PERUBAHAN <<<
                                       checkboxInput("select_all", "Pilih Semua Kategori", value = FALSE)
            ),
            mainPanel(div(
@@ -18,19 +22,25 @@ menu1_ui <- function(id) {
                                        p("Kilo Ton (Kt)"),
                                        p(strong("Terakhir Diupdate")),
                                        p("05 Mei 2025"),
-                                       p(strong("Sumber Data")), 
-                                       a("https://www.fao.org/faostat/en/#data/GT", 
+                                       p(strong("Sumber Data")),
+                                       a("https://www.fao.org/faostat/en/#data/GT",
                                          href = "https://www.fao.org/faostat/en/#data/GT", target = "_blank")
                     )
                     )
-                    ),
+                    )
+           ),
+           fluidRow(
+             column(12,
+                    wellPanel(
+                      h4("Analisis Kategori Sumber Emisi Terpilih"),
+                      uiOutput("dynamic_interpretation_menu1")
+                    )
+             )
            )
            )
            )
-           
   )
 }
-
 
 menu2_ui <- function(id){
   # ns <- NS(id) # Baris ini tidak digunakan untuk input/output ID jika server tidak pakai moduleServer dengan ns()
