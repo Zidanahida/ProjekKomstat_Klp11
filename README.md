@@ -11,14 +11,14 @@ Dashboard ini menyajikan visualisasi terkait **emisi gas metana (CH₄)**  yang 
 - **Thumbnail Informasi Terkait** pemanasan global dan gas metana.
 
 ## 🚀 Cara Menggunakan
-Pengguna dapat langsung mengakses web berikut : ...
-atau melakukan instalasi secara lokal pada aplikasi shiny pengguna.
+Pengguna dapat langsung mengakses web berikut : `https://ari12sadewa.shinyapps.io/CH4SEasia`  
+atau melakukan instalasi secara lokal pada aplikasi Rstudio pengguna.
 
 Tata cara instalasi lokal :
 1. Unduh seluruh file yang ada pada Repository ini dalam format `ZIP`.
 2. Ekstrak file `ZIP` yang telah diunduh.
-3. Buka file `testRun.R` dan install seluruh packages yang diperlukan.
-4. Jalankan `shiny::runApp()`
+3. Buka file `testRun.R` dan install seluruh packages yang diperlukan melalui aplikasi Rstudio.
+4. Jalankan `shiny::runApp()` pada file `testRun.R`
 5. Pengguna dapat mengeksplor fitur-fitur dari masing-masing tab yang ada :
    - `Beranda`: Visualisasi dasar dan informasi mengenai emisi metana di Asia Tenggara
    - `Menu`: Visualisasi lanjutan  
