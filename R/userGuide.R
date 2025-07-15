@@ -58,7 +58,7 @@ userGuide_ui <- function(id) {
     
     div(class = "guide-video d-flex justify-content-center mb-4",
         div(style = "max-width: 1000px; width: 100%;",
-            embed_youtube("bdaCJtFDUak", height = 450)
+            embed_youtube("rgz9tqDYdMg", height = 450)
         )
     ),
     
@@ -113,6 +113,7 @@ userGuide_ui <- function(id) {
                 tags$ul(
                   tags$li("Sumber: FAOSTAT, World Bank, dan GeoJSON ASEAN Maps."),
                   tags$li("Masing-masing panel memiliki tautan ke halaman resmi sumber."),
+                  tags$li("Informasi Metadata"),
                   tags$li("Menggunakan berbagai paket R seperti ggplot2, shiny, leaflet, dsb.")
                 )
             )
@@ -141,10 +142,8 @@ userGuide_ui <- function(id) {
             div(class = "guide-step",
                 tags$p("Halaman ini memperkenalkan siapa di balik platform ini dan menjawab pertanyaan umum dari pengguna."),
                 tags$ul(
-                  tags$li("Penjelasan bahwa CH4.SEasia adalah platform visualisasi emisi metana."),
-                  tags$li("Data dari FAO dan sumber terbuka lainnya."),
-                  tags$li("Pendekatan sains data digunakan untuk menyajikan informasi."),
-                  tags$li("Struktur proyek, nama file, dan susunan folder tersedia di halaman ini.")
+                  tags$li("Latar belakang dan tujuan pembuatan dashboard"),
+                  tags$li("Informasi pengembang")
                 )
             )
         )
