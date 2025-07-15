@@ -16,7 +16,7 @@ home_ui <- function(id) {
                                                        ),
                                                        
                                                        # Paragraf deskripsi lengkap
-                                                       tags$p("Visualisasi merupakan hasil rata-rata pelepasan gas emisi metana dari berbagai sektor di Asia Tenggara, sepanjang tahun 2000–2022, yang dikelompokkan berdasarkan negara."),
+                                                       tags$p("Visualisasi merupakan rata-rata pelepasan gas emisi metana dari berbagai sektor di Asia Tenggara per tahun, sepanjang tahun 2000–2022. Data dikelompokkan berdasarkan negara."),
                                                        
                                                        tags$hr(style="margin:0"),
                                                        
@@ -61,9 +61,9 @@ home_ui <- function(id) {
                                                          style = "font-weight: bold; font-size: 16px; margin-bottom: 3px;",
                                                          "Interpretasi"
                                                        ),
-                                                       tags$p("Dari peta visualisasi, terlihat bahwa Indonesia merupakan negara dengan warna merah paling pekat, menandakan tingginya pelepasan gas metana di kawasan Asia Tenggara, yaitu sebesar 1507,5 Kt/tahun. Sektor-sektor yang menjadi penyumbang emisi dapat ditinjau lebih lanjut pada menu 'Emisi gas metana berdasarkan kategori sumber'."),
-                                                       tags$p("Di posisi kedua adalah Thailand dengan total emisi sebesar 580 Kt/tahun, yang bahkan tidak mencapai sepertiga dari emisi Indonesia. Posisi ketiga ditempati oleh Myanmar sebesar 547,5 Kt/tahun, atau setara 94% dari emisi Thailand."),
-                                                       tags$p("Kondisi ini menunjukkan bahwa Indonesia menjadi kontributor terbesar dalam pelepasan gas metana di kawasan Asia Tenggara, dan berperan signifikan terhadap pemanasan global. Pemerintah Indonesia perlu menindaklanjuti hal ini dengan mengontrol faktor-faktor penyebab tingginya emisi untuk mengurangi dampaknya terhadap lingkungan.")
+                                                       tags$p("Dari peta visualisasi, terlihat bahwa Indonesia merupakan negara dengan warna merah paling pekat, menandakan tingginya pelepasan gas metana di wilayah ini, yaitu sebesar 34673 Kt/tahun. Sektor-sektor yang menjadi penyumbang emisi dapat ditinjau lebih lanjut pada menu 'Emisi gas metana berdasarkan kategori sumber'."),
+                                                       tags$p("Di posisi kedua adalah Thailand dengan total emisi sebesar 13340 Kt/tahun, yang bahkan tidak mencapai setengah dari emisi Indonesia. Posisi ketiga ditempati oleh Myanmar sebesar 12512 Kt/tahun, atau setara 93.8% dari emisi Thailand."),
+                                                       tags$p("Kondisi ini menunjukkan bahwa Indonesia menjadi kontributor terbesar dalam pelepasan gas metana di kawasan Asia Tenggara, sekaligus beresiko menjadi negara yang bertanggung jawab besar terhadap pemanasan global. Pemerintah Indonesia perlu menindaklanjuti hal ini dengan mengontrol faktor-faktor penyebab tingginya emisi untuk mengurangi dampaknya terhadap lingkungan.")
                                                      )
                                                    ),
                                                    column(12,card(plotlyOutput("emissionPlot"),radioButtons("ispiechart", "Choose Chart Type:",
@@ -79,13 +79,14 @@ home_ui <- function(id) {
                                              max = max(dataClean$Year, na.rm = TRUE),
                                              value = c(min(dataClean$Year, na.rm = TRUE), 
                                                        max(dataClean$Year, na.rm = TRUE)),
-                                             step = 1,
+                                             step = 1, width = 400,
+                                            
                                             sep = ""
                                          ),
                              radioButtons("divide_by_area", "Data Division:",
                                                                      choices = c("Divide by Area" = TRUE, 
                                                                                  "Raw Data" = FALSE),
-                                                                     selected = TRUE),
+                                                                     selected = FALSE),
                              uiOutput("legendUI")),
                includeScript("www/js/script.js"),
                
@@ -103,7 +104,7 @@ home_ui <- function(id) {
                           h3("Informasi mengenai Pemanasan Global dan Methana (CH4)",
                              style = "font-weight:600; margin-bottom: 20px;"),
                           
-                          # Carousel wrapper
+                          # Carousel wrapper: horizontal scroll container
                           tags$div(
                             style = "
                                       display: flex;
@@ -192,7 +193,7 @@ home_ui <- function(id) {
                                   onmouseover = "this.style.transform='scale(1.03)'",
                                   onmouseout = "this.style.transform='scale(1)'",
                                   
-                                  # Gambar
+                                  # Gambar (opsional)
                                   if (!is.null(card$img)) tags$img(src = card$img, 
                                                                    style = "
                                                                             height: 70px;
@@ -208,7 +209,7 @@ home_ui <- function(id) {
                                   # Judul
                                   tags$h5(card$title, style = "font-size: 16px; font-weight:600; margin-bottom: 10px;"),
                                   
-                                  # Isi scrollable 
+                                  # Isi scrollable (⬇️ bagian ini yang overflow-y)
                                   tags$div(
                                     style = "overflow-y: auto; flex-grow: 1; font-size: 14px; line-height: 1.5; padding-right: 5px;",
                                     tags$p(card$desc),
